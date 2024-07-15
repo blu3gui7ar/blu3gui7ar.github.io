@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="HandheldFriendly" content="True"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <style>
+        #output {
+            text-align: center;
+            font-size: 128px;
+        }
+        #countdown {
+            text-align: center;
+            font-size: 128px;
+            color: green
+        }
+        form {
+            font-size: 32px;
+        }
+        input[type="checkbox"] {
+            width: 48px;
+            height: 48px;
+        }
+        input[type="number"] {
+            width: 128px;
+            height: 48px;
+            font-size: 32px;
+        }
+    </style>
+    <title>Random String and Note Generator</title>
+    <script>
+        let countdown = 10;
+        function getRandomString() {
+            return pickRandom(
+                Array.from(document.getElementsByName('strings')).filter(e => e.checked).map(e => e.value)
+            );
+        }
+        function getRandomChord() {
+            return pickRandom(
+                Array.from(document.getElementsByName('chord-type')).filter(e => e.checked).map(e => e.value)
+            );
+        }
+        function getRandomNote() {
+            return pickRandom(
+                Array.from(document.getElementsByName('notes')).filter(e => e.checked).map(e => e.value)
+            );
+        }
+        function pickRandom(inputs) {
+            return inputs.length <= 0 ? "" : inputs[Math.floor(Math.random() * inputs.length)];
+        }
+
+        function generate() {
+            document.getElementById("output").innerHTML = "@" + getRandomString() + ": " + getRandomNote() + getRandomChord();
+        }
+
+        let handler = setInterval(function () {
+            if (countdown == 0) {
+                countdown = document.getElementById("interval").value;
+                generate();
+            } else {
+                countdown--;
+                document.getElementById("countdown").innerHTML = countdown;
+            }
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <h1>Random Chord Generator</h1>
+
+    <h1 id="output"></h1>
+    <h1 id="countdown"></h1>
+
+    <form id="options">
+        <!-- Add checkboxes for selecting chord types -->
+        <p>
+        <h2>Chord Types:</h2>
+        <label for="chord-type-major"><input type="checkbox" id="chord-type-major" name="chord-type" checked="checked"
+                value="M"> Major</label>
+        <label for="chord-type-minor"><input type="checkbox" id="chord-type-minor" name="chord-type" checked="checked"
+                value="m"> Minor</label>
+        <label for="chord-type-augmented"><input type="checkbox" id="chord-type-augmented" name="chord-type"
+                value="+"> Augmented</label>
+        <label for="chord-type-diminished"><input type="checkbox" id="chord-type-diminished" name="chord-type"
+                value="-"> Diminished</label>
+        <label for="chord-type-major7"><input type="checkbox" id="chord-type-major7" name="chord-type" 
+                checked="checked" value="M7"> Major7</label>
+        <label for="chord-type-minor7"><input type="checkbox" id="chord-type-minor7" name="chord-type" 
+                checked="checked" value="m7"> Minor7</label>
+        <label for="chord-type-dominant7"><input type="checkbox" id="chord-type-dominant7" name="chord-type"
+                checked="checked" value="7"> Domminant7</label>
+        <label for="chord-type-diminished7"><input type="checkbox" id="chord-type-diminished7" name="chord-type"
+                value="dim7"> Diminished7</label>
+        <label for="chord-type-half-diminished7"><input type="checkbox" id="chord-type-half-diminished7" name="chord-type"
+                value="m7♭5"> Half Diminished7</label>
+        </p>
+        <!-- Add checkboxes for selecting notes -->
+        <p>
+        <h2>Base Notes:</h2>
+        <label for="note-C"><input type="checkbox" id="note-C" name="notes" checked="checked" value="C"> C</label>
+        <label for="note-C-sharp"><input type="checkbox" id="note-C-sharp" name="notes" value="C#"> C♯ / D♭</label>
+        <label for="note-D"></label><input type="checkbox" id="note-D" name="notes" checked="checked" value="D">
+        D</label>
+        <label for="note-D-sharp"><input type="checkbox" id="note-D-sharp" name="notes" value="D#"> D♯ / E♭</label>
+        <label for="note-E"><input type="checkbox" id="note-E" name="notes" checked="checked" value="E"> E</label>
+        <label for="note-F"></label><input type="checkbox" id="note-F" name="notes" checked="checked" value="F">
+        F</label>
+        <label for="note-F-sharp"><input type="checkbox" id="note-F-sharp" name="notes" value="F#"> F♯ / G♭</label>
+        <label for="note-G"></label><input type="checkbox" id="note-G" name="notes" checked="checked" value="G">
+        G</label>
+        <label for="note-G-sharp"><input type="checkbox" id="note-G-sharp" name="notes" value="G#"> G♯ / A♭</label>
+        <label for="note-A"></label><input type="checkbox" id="note-A" name="notes" checked="checked" value="A">
+        A</label>
+        <label for="note-A-sharp"><input type="checkbox" id="note-A-sharp" name="notes" value="A#"> A♯ / B♭</label>
+        <label for="note-B"></label><input type="checkbox" id="note-B" name="notes" checked="checked" value="B">
+        B</label>
+        </p>
+        <!-- Add checkboxes for selecting strings -->
+        <p>
+        <h2>Strings:</h2>
+        <label for="string-1"><input type="checkbox" id="string-1" name="strings" value="1"> 1</label>
+        <label for="string-2"><input type="checkbox" id="string-2" name="strings" value="2"> 2</label>
+        <label for="string-3"><input type="checkbox" id="string-3" name="strings" value="3"> 3</label>
+        <label for="string-4"><input type="checkbox" id="string-4" name="strings" checked="checked" value="4"> 4</label>
+        <label for="string-5"><input type="checkbox" id="string-5" name="strings" checked="checked" value="5"> 5</label>
+        <label for="string-6"><input type="checkbox" id="string-6" name="strings" checked="checked" value="6"> 6</label>
+        </p>
+        <!-- Add input for intervals defaults to 5 seconds -->
+        <p>
+        <h2>Interval:</h2>
+        <input type="number" value="10" id="interval">
+        </p>
+    </form>
+    <script>
+        window.onload = function () {
+            generate();
+        }
+    </script>
+</body>
+
+</html>
