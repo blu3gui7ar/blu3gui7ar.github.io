@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "http://blu3gui7ar.github.io"
+base_url = "//blu3gui7ar.github.io"
 
 theme = "papaya"
 
