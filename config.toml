@@ -8,6 +8,7 @@ compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+generate_feeds = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -20,8 +21,8 @@ highlight_code = true
 [languages.en]
 title = "blu3gui7ar's space"
 description = "Lost in the FUN!"
-generate_feeds = false
-# feed_filenames = "atom.xml"
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 # The taxonomies to be rendered for the site and their configuration of the default languages
 taxonomies = [
     { name = "tags", feed = true, lang = "en" },
@@ -53,8 +54,8 @@ date_format = "%B %e, %Y"
 [languages.zh]
 title = "blu3gui7ar的游乐场"
 description = "玩点啥子"
-# base_url = "https://blu3gui7ar.github.io/zh"
-generate_feeds = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 # The taxonomies to be rendered for the site and their configuration of the default languages
 taxonomies = [
     { name = "tags", feed = true, lang = "zh" },
