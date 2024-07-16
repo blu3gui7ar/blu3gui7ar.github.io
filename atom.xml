@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>blu3gui7ar&#x27;s space</title>
+    <subtitle>Lost in the FUN!</subtitle>
+    <link rel="self" type="application/atom+xml" href="//blu3gui7ar.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="//blu3gui7ar.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-11T00:00:00+00:00</updated>
+    <id>//blu3gui7ar.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Guitar Tools</title>
+        <published>2021-08-11T00:00:00+00:00</published>
+        <updated>2021-08-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="//blu3gui7ar.github.io/funs/guitar/"/>
+        <id>//blu3gui7ar.github.io/funs/guitar/</id>
+        
+        <content type="html" xml:base="//blu3gui7ar.github.io/funs/guitar/">&lt;p&gt;&lt;a href=&quot;&#x2F;&#x2F;blu3gui7ar.github.io&#x2F;funs&#x2F;guitar&#x2F;chord.html&quot;&gt;和弦生成器&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>My second post</title>
+        <published>2019-11-28T00:00:00+00:00</published>
+        <updated>2019-11-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="//blu3gui7ar.github.io/blog/second/"/>
+        <id>//blu3gui7ar.github.io/blog/second/</id>
+        
+        <content type="html" xml:base="//blu3gui7ar.github.io/blog/second/">&lt;p&gt;This is my second blog post.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>My first post</title>
+        <published>2019-11-27T00:00:00+00:00</published>
+        <updated>2019-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="//blu3gui7ar.github.io/blog/first/"/>
+        <id>//blu3gui7ar.github.io/blog/first/</id>
+        
+        <content type="html" xml:base="//blu3gui7ar.github.io/blog/first/">&lt;p&gt;This is my first blog post.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

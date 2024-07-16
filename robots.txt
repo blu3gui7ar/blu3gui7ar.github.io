@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: //blu3gui7ar.github.io/sitemap.xml
